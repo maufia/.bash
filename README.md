@@ -1,0 +1,2 @@
+# .bash
+My Bash settings
