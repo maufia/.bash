@@ -1,0 +1,48 @@
+# Attribute codes:
+# 00=none 01=bold 04=underscore 05=blink 07=reverse 08=concealed
+# Text color codes:
+# 30=black 31=red 32=green 33=yellow 34=blue 35=magenta 36=cyan 37=white
+# Background color codes:
+# 40=black 41=red 42=green 43=yellow 44=blue 45=magenta 46=cyan 47=white
+
+# See "dircolors -p" (and -b) for see settings!
+
+# standard
+#export LS_COLORS="di=01;33:ln=01;36:ex=01;32"
+export LS_COLORS="fi=00" # files
+export LS_COLORS="$LS_COLORS:di=01;33" #directory
+export LS_COLORS="$LS_COLORS:ln=01;36" # links
+export LS_COLORS="$LS_COLORS:ex=01;32" # executables
+export LS_COLORS="$LS_COLORS:ow=04;34" # other write
+#export LS_COLORS="$LS_COLORS:no=00:fi=00:pi=40;33:so=01;35:bd=40;33;01"
+#export LS_COLORS="$LS_COLORS:cd=40;33;01:or=40;31;01"
+# compressed files (red)
+export LS_COLORS="$LS_COLORS:*.tar=01;31:*.tgz=01;31:*.taz=01;31:*.zip=01;31"
+export LS_COLORS="$LS_COLORS:*.z=01;31:*.Z=01;31:*.gz=01;31"
+# pictures
+export LS_COLORS="$LS_COLORS:*.jpg=01;35:*.JPG=01;35:*.gif=01;35:*.bmp=01;35:*.ppm=01;35"
+export LS_COLORS="$LS_COLORS:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.mpg=01;35:*.mpeg=01;35"
+# music
+export LS_COLORS="$LS_COLORS:*.mp3=0;36:*.mid=0;36:*.wav=0;36:*.ogg=0;36"
+# drawing programs
+export LS_COLORS="$LS_COLORS:*.fig=02;35:*.dia=02;35"
+# printable foramt (magenta)
+export LS_COLORS="$LS_COLORS:*.eps=01;35:*.epsi=01;35:*.ps=01;35:*.pdf=01;35"
+# programming languages
+export LS_COLORS="$LS_COLORS:*.mat=04;32:*.m=00;32"
+export LS_COLORS="$LS_COLORS:*.c=00;32:*.cc=00;32:*.java=00;32:*.o=00;32:*.h=00;32:*.py=01;32:*.pyc=00;32"
+export LS_COLORS="$LS_COLORS:*.prl=0;32:*.pl=00;32:*.pm=00;32"
+export LS_COLORS="$LS_COLORS:*.elc=04;32:*.el=00;32"
+export LS_COLORS="$LS_COLORS:*.html=4;36:*.xml=4;36"
+# Latex
+export LS_COLORS="$LS_COLORS:*.tex=00;33:*.bib=00;33:*.bst=00;33:*.aux=00;33"
+export LS_COLORS="$LS_COLORS:*.blg=00;33:*.toc=00;33:*.cls=00;33:*.dvi=00;33"
+# Open Office
+export LS_COLORS="$LS_COLORS:*.odt=0;33:*.ods=0;33:*.odp=0;33:*.odg=0;33"
+# widoz
+export LS_COLORS="$LS_COLORS:*.doc=4;34:*.docx=4;34:*.ppt=4;34:*.exe=4;34:*.xls=4;34"
+#others
+export LS_COLORS="$LS_COLORS:*.letter=4;37:*.txt=4;37:*.log=4;37"
+export LS_COLORS="$LS_COLORS:*.bak=5;34:*.*~=5;34:*~=5;34"
+export LS_COLORS="$LS_COLORS:*.deb=4;36:*.rpm=4;36"
+export LS_COLORS="$LS_COLORS:*.*=0;34"
