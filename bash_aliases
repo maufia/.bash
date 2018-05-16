@@ -7,7 +7,10 @@ umask 022
 # set bell off
 case "$TERM" in
     linux*)
+        ;;
+    *)
         xset -b b  off
+        ;;
 esac
 
 # set listing taking into account capital/small letter
