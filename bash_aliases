@@ -5,9 +5,10 @@
 umask 022
 
 # set bell off
-if [[ -f "/usr/bin/xset" ]]; then
-    xset -b b  off
-fi
+case "$TERM" in
+    linux*)
+        xset -b b  off
+esac
 
 # set listing taking into account capital/small letter
 export LC_COLLATE=C
@@ -76,7 +77,7 @@ function longpp() {
 }
 
 case "$TERM" in
-    xterm*|rxvt*|rxvt-unicode*|screen-256color*)
+    xterm*|rxvt*|rxvt-unicode*|screen-256color*|linux*)
         PS1="\[\e[1;36m\][\$(date +%H:%M)]\
 \[\e[0;32m\]\u\[\e[0;37m\]@\[\e[1;37m\]\h:\
 \[\e[1;31m\]\w\[\e[0m\] -> "
