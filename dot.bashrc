@@ -105,6 +105,8 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 DROPBOX="$HOME/MyDropbox/DOT_FILES/BASH"
 if [ -f $HOME/.bash_aliases ]; then
     . $HOME/.bash_aliases
+elif [ -f $HOME/.bash/bash_aliases ]; then
+    . $HOME/.bash/bash_aliases
 elif [ -f $DROPBOX/bash_aliases ]; then
     . $DROPBOX/bash_aliases
 else
@@ -114,6 +116,8 @@ fi
 # load bash colors settings 
 if [ -f $HOME/.bash_colors ]; then
     . $HOME/.bash_colors
+elif [ -f $HOME/.bash/bash_colors ]; then
+    . $HOME/.bash/bash_colors
 elif [ -f $DROPBOX/bash_colors ]; then
     . $DROPBOX/bash_colors
 else
