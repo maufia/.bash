@@ -5,7 +5,9 @@
 umask 022
 
 # set bell off
-xset -b b  off
+if [[ -f "/usr/bin/xset" ]]; then
+    xset -b b  off
+fi
 
 # set listing taking into account capital/small letter
 export LC_COLLATE=C
