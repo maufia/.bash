@@ -190,8 +190,8 @@ alias m='$HOME/bin/m'
 # vim should be handled by update-alternatives --config vim
 alias vi='vim'
 # Set pager using vimpager
-export PAGER=$HOME/bin/vimpager/vimpager
-export MANPAGER="$HOME/bin/vimpager/vimpager -u $HOME/MyDropbox/DOT_FILES/Vi/dot.vimpagerrc"
+export PAGER=/usr/bin/vimpager
+export MANPAGER=/usr/bin/vimpager 
 
 
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
