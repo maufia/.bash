@@ -42,7 +42,7 @@ longp() {
 }
 
 function short_prompt() {
-	MY_SHORT_PROMPT=`python $HOME/bin/shortprompt.py $PROMPT_N_CHARS_TOTAL $PROMPT_N_CHARS_END`
+	MY_SHORT_PROMPT=`python ~/.bash//shortprompt.py $PROMPT_N_CHARS_TOTAL $PROMPT_N_CHARS_END`
     PS1="$(echo -n $(virtenv_prompt))\
 \[\e[0;32m\]\u\[\e[0;37m\]:\
 \[\e[1;31m\]$(echo -n $MY_SHORT_PROMPT)\
@@ -269,7 +269,9 @@ pr4() {
 #--------------------------------------------------
 # TMUX
 alias tmux='TERM=xterm-256color tmux -2 $@'
-alias tmuxifier="TERM=xterm-256color $HOME/bin/tmuxifier s LINUX"
+if [[ -d ".tmuxifier" ]]; then
+    alias tmuxifier="TERM=xterm-256color $HOME/.tmuxifier/bin/tmuxifier s LINUX"
+fi
 
 #--------------------------------------------------
 # Dos to unix functionality
