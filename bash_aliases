@@ -288,12 +288,12 @@ unix2dos(){
 # Python's Virtual Environment settings
 # Remember to change virtualwrapper in /etc/bash_completion.d, as it
 # uses /usr/share in place of /usr/local/bin/
-if [[ -f /usr/local/bin/virtualenvwrapper ]]; then
-    export WORKON_HOME=$HOME/.virtualenvs
-    export PROJECT_HOME=$HOME/Python/PyVirtEnvs
-    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-    export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
-    source /usr/local/bin/virtualenvwrapper_lazy.sh
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    export WORKON_HOME="$HOME/.virtualenvs"
+    export PROJECT_HOME="$HOME/Python/PyVirtEnvs"
+    export VIRTUALENVWRAPPER_PYTHON="/usr/bin/python3"
+    export VIRTUALENVWRAPPER_SCRIPT="/usr/local/bin/virtualenvwrapper.sh"
+    source /usr/local/bin/virtualenvwrapper.sh
 fi
 
 #--------------------------------------------------
