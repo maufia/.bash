@@ -127,7 +127,7 @@ findf()	{
 		find . -iname "$1" -print
 	fi
 }
-SEARCHFILES='.c .cc .cpp .c++ .h .hpp .hh .pl .pm .sh .py .java .m .py .tex';
+SEARCHFILES='.c .cc .cpp .c++ .h .hpp .hh .pl .pm .sh .py .java .m .py .tex .sm';
 findg() {
 	FINDGUSAGE="Usage: findg [-a | FILE] PATTERN";
 	if [ "$#" -eq 0 ]; then
