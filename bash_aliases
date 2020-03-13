@@ -184,8 +184,7 @@ xe() {
 	emacs --no-splash $* &
 }
 alias src='source $HOME/.bashrc;'
-alias less='$HOME/bin/m'
-alias m='$HOME/bin/m'
+alias less='$HOME/.local/bin/m'
 
 # vim should be handled by update-alternatives --config vim
 alias vi='vim'
@@ -311,4 +310,5 @@ fi
 if [ -f $HOME/.bash_colors ]; then
     . $HOME/.bash_colors
 fi
+
 
