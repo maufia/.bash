@@ -127,7 +127,7 @@ findf()	{
 		find . -iname "$1" -print
 	fi
 }
-SEARCHFILES='.c .cc .cpp .c++ .h .hpp .hh .pl .pm .sh .py .java .m .py .tex';
+SEARCHFILES='.c .cc .cpp .sm .c++ .h .hpp .hh .pl .pm .sh .py .java .m .py .tex ';
 findg() {
 	FINDGUSAGE="Usage: findg [-a | FILE] PATTERN";
 	if [ "$#" -eq 0 ]; then
@@ -139,17 +139,17 @@ findg() {
 		echo "Options:"
         echo "    -a, -all search every file \(ignoring binaries\)"
 		echo "If only PARAMETER is given, only C, C++, Perl, Python,"
-		echo "Latex, Shell and Matlab files are matched"
+		echo "Latex, Shell and Matlab, StateMachine files are matched"
 		echo "  "
 	elif [ "$#" -eq 1 ]; then
 		for ext in $SEARCHFILES; do
-			find . -iname "*$ext" -print |xargs grep --color=yes -iIsn -A 1 -B 1 $1;
+			find . -iname "*$ext" -type f -print |xargs /bin/egrep --color=yes -iIsHn -A 1 -B 1 $1;
 		done
 	else
 		if [ "$1" = "-all" ] || [ "$1" = "-a" ]; then
-			find . -iname "*" -print |xargs grep --color=yes -iIsn -A 1 -B 1 $2;
+			find . -iname "*" -type f -print |xargs /bin/egrep --color=yes -iIHsn -A 1 -B 1 $2;
 		else
-			find . -iname "$1" -print |xargs grep --color=yes -Isn $2;
+			find . -iname "$1" -type f -print |xargs /bin/egrep --color=yes -IsHn $2;
 		fi
 	fi
 }
@@ -184,8 +184,7 @@ xe() {
 	emacs --no-splash $* &
 }
 alias src='source $HOME/.bashrc;'
-alias less='$HOME/bin/m'
-alias m='$HOME/bin/m'
+alias less='$HOME/.local/bin/m'
 
 # vim should be handled by update-alternatives --config vim
 alias vi='vim'
@@ -311,4 +310,5 @@ fi
 if [ -f $HOME/.bash_colors ]; then
     . $HOME/.bash_colors
 fi
+
 
