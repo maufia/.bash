@@ -216,7 +216,7 @@ untex(){
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # PRINT
 #export PRINTER=hp4350
-export PRINTER=HP-BW
+export PRINTER=HP_BW
 export PRINT_COMMAND="lp -d $PRINTER"
 # normal printing
 pr1() {

@@ -124,6 +124,10 @@ else
 	echo "'bash_colors: No bash_colors file found"
 fi
 
+# load btc shortcuts
+if [ -f $HOME/.bash/bash_btc ]; then
+    . $HOME/.bash/bash_btc
+fi
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
