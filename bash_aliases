@@ -201,7 +201,7 @@ alias fcount="ls -1 |wc -l";
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # LATEX
 alias xdvi='/usr/bin/xdvi $* &'
-untex(){
+untex() {
     if [ "$#" = "0" ]; then
         echo " .bashrc: UNTEX delete all latex files.";
         echo "          usage: untex FILE ";
@@ -216,7 +216,7 @@ untex(){
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # PRINT
 #export PRINTER=hp4350
-export PRINTER=HP-BW
+export PRINTER=HP_BW
 export PRINT_COMMAND="lp -d $PRINTER"
 # normal printing
 pr1() {
@@ -275,12 +275,12 @@ fi
 
 #--------------------------------------------------
 # Dos to unix functionality
-dos2unix(){
+dos2unix() {
   tr -d '\r' < "$1" > t
   mv -f t "$1"
 }
 
-unix2dos(){
+unix2dos() {
   sed -i 's/$/\r/' "$1"
 }
 
@@ -296,6 +296,13 @@ if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     source /usr/local/bin/virtualenvwrapper.sh
 fi
 
+# for venv!
+venvup() {
+    echo "Source python's virtual environment"
+    echo "Use deactivate to exit"
+    source "$1/bin/activate"
+}
+
 #--------------------------------------------------
 # Anaconda path
 #if ! echo $PATH | /bin/egrep -q "anaconda"* ; then
@@ -306,9 +313,14 @@ fi
 #    fi
 #fi
 
+
 #--------------------------------------------------
-# load bash colors file, must stay at the end
+alias pycharm="charm&";
+
+#--------------------------------------------------
+# load bash colors file, must stay at the end!!
 if [ -f $HOME/.bash_colors ]; then
     . $HOME/.bash_colors
 fi
+
 
