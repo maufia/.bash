@@ -184,7 +184,7 @@ xe() {
 	emacs --no-splash $* &
 }
 alias src='source $HOME/.bashrc;'
-alias less='$HOME/.local/bin/m'
+alias less='$HOME/bin/m'
 
 # vim should be handled by update-alternatives --config vim
 alias vi='vim'
